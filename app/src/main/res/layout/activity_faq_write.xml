@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+
+    tools:context=".FaqWrite">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#142E2B2B"
+        android:paddingTop="15dp"
+        android:text="FAQ작성"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+
+        <EditText
+            android:id="@+id/et_faq_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:inputType="textPersonName"
+            android:hint="제목을 입력하세요"
+            android:gravity="start"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/et_faq_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inputType="textPersonName"
+            android:gravity="start"
+            android:layout_weight="8"
+            android:hint="내용을 입력하세요"
+            android:text=""
+            android:ellipsize="end"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_faq_c"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00F5F2F2"
+            android:text="취소"
+            android:onClick="btn_faq_c"
+            />
+
+        <Button
+            android:id="@+id/btn_faq_write"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00E9DFDF"
+            android:onClick="btn_faq_write"
+            android:text="작성"
+            android:textColor="#0097A7" />
+
+    </LinearLayout>
+
+</LinearLayout>
