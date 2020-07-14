@@ -33,7 +33,7 @@ ini_set('error_reporting',E_ALL);
                     echo json_encode($response);
                 } 
             }
-            // 이 부분에서 쿼리 생성해서 Array 만들기
+        
         
           
         } catch(PDOException $ex) {
