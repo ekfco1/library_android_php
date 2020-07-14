@@ -18,7 +18,7 @@ $UserPhone = $_GET["UserPhone"];
 
             // 이 부분에서 쿼리 생성해서 Array 만들기
            $Query = 'SELECT mem_id, mem_passwd from AND_201844049.member WHERE mem_name = \''.$UserName.'\' and mem_phone = \''.$UserPhone.'\';';
-           foreach ($Conn -> query($Query) as $result)//애기야 mem_flag도 값 처리해야되요 애기 화면이 두개잖아
+           foreach ($Conn -> query($Query) as $result)
            { // 데이터 베이스 쿼리 결과 로우들을 반복문으로 파싱하기 결과값 출력
                $response["Result"] = "Success";
                $response["MemberId"] = $result['mem_id'];
