@@ -34,10 +34,9 @@ ini_set('error_reporting',E_ALL);
             else
             {
                 // 그렇지 않으면 바로 INSERT
-                // 나중에 더 상세하게 짜면 더 좋아요, 데이터 베이스에서 생기는 데이터 깨지는 이슈를 막을 수 있어용
+
                 $Query = 'INSERT into AND_201844049.member(mem_id, mem_passwd,mem_name,mem_phone, mem_flag) values(\''.$UserID.'\',\''.$UserPW.'\',\''.$UserName.'\',\''.$UserPhone.'\',\''.$UserFlag.'\');';
-                $Conn->exec($Query); // 이 부분에서 commit 도 같ㅇ
-                // $Conn -> commit(); // 이 부분이 그래서 오류가 발생해서 근데 commit을 안해줬는데 어떻게 디비에 들어가
+                $Conn->exec($Query); 
 
                 // 결과 화면 출력
                 // 결과 초기값이 Fail 이니까, Success 로 변경
