@@ -21,7 +21,7 @@ ini_set('error_reporting',E_ALL);
             member.mem_flag, member.mem_no as mem_no from AND_201844049.board as board join AND_201844049.member as member on board.mem_no = member.mem_no where
             board_no = \''.$BoardNo.'\';';
 
-            foreach ($Conn -> query($Query) as $result)//애기야 mem_flag도 값 처리해야되요 애기 화면이 두개잖아
+            foreach ($Conn -> query($Query) as $result)
             { // 데이터 베이스 쿼리 결과 로우들을 반복문으로 파싱하기 결과값 출력
                 $response["Result"] = "Success";
                 $response["BoardNo"] = $result["board_no"];
