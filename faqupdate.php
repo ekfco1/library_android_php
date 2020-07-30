@@ -1,8 +1,6 @@
 <?php
 ini_set('display_errors',1);
 ini_set('error_reporting',E_ALL);
-// GET 변수가 모두 입력되어 있는지 확인하기
-// GET 변수가 하나라도 없으면 else 문으로 이동하게되오
     if(isset($_GET["FNo"])) {
         $FNo = $_GET["FNo"];
         $FTitle = $_GET["FTitle"];
