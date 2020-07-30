@@ -19,9 +19,6 @@ ini_set('error_reporting',E_ALL);
             $response["UpdateResult"] = "Success";
             $result_count = $Conn->prepare($Query);
             $result_count -> execute();
-
-
-            //$Query = 'INSERT INTO AND_201844049.bookrent(bookrent.book_no, bookrent.mem_no, bookrent.rbook_rentdate, bookrent.rbook_returndate)    VALUES('.$BNo.', '.$RMemNo.'\', CURRENT_DATE, date_add(CURRENT_DATE, INTERVAL 7 DAY);';
             $Conn -> exec($Query);
             if($result_count->rowCount() != 0){
                 $Query = 'INSERT INTO AND_201844049.bookrent(book_no, mem_no, rbook_rentdate, rbook_returndate) 
