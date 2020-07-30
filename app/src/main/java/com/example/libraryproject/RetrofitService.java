@@ -9,11 +9,12 @@ import retrofit2.http.Query;
 
 interface RetrofitService {
 
-        @POST("register1.php") //회원가입
+        @POST("register.php") //회원가입
         Call<MemDTO> getregister(@Query("UserID") String UserID, @Query("UserPW") String UserPW, @Query("UserName") String UserName,
-                                 @Query("UserPhone") Integer UserPhone, @Query("UserFlag") String UserFlag);// register = api uri 부분(php이름)
+                                 @Query("UserPhone") Integer UserPhone, @Query("UserFlag") String UserFlag, @Query("Token") String Token);// register = api uri 부분(php이름)
 
-        @GET("login1.php") //로그인
+//   ??     @GET("login1.php") //로그인
+        @GET("tlogin.php")
         Call<MemDTO> getlogin(@Query("UserID") String UserID, @Query("UserPW") String UserPW);
 
         @GET("retrofit_test.php") //예시
@@ -35,7 +36,7 @@ interface RetrofitService {
         Call<List<FaqDTO>> getFaq();
 //
         @POST("insertfaq.php")//faq 등록
-        Call<FaqDTO> insertFaq( @Query("FTitle") String FTitle, @Query("FContent") String FContent ,@Query("MemNo") String MemNo);
+        Call<FaqDTO> insertFaq( @Query("FTitle") String FTitle, @Query("FContent") String FContent,@Query("MemNo") String MemNo);
 
         @GET("readfaq.php")//FAQ read
         Call<FaqDTO> readFaq(@Query("FNo") String FNo);

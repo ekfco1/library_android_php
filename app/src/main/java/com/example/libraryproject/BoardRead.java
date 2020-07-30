@@ -36,7 +36,7 @@ public class BoardRead extends AppCompatActivity {
         RIntent = getIntent();
         boardNo = RIntent.getStringExtra("BOARD_NO");
         BMemNo = RIntent.getStringExtra("MEM_NO");
-        Log.d("BOARD_NO", boardNo.toString());
+//        Log.d("BOARD_NO", boardNo.toString());
 
         board_title = (TextView)findViewById(R.id.board_title);
         board_book_title = (TextView) findViewById(R.id.board_book_title);
@@ -47,7 +47,7 @@ public class BoardRead extends AppCompatActivity {
         btn_board_up = (Button) findViewById(R.id.btn_board_up);
         btn_board_d = (Button) findViewById(R.id.btn_board_d);
         Log.d("MEMNO", MemNo.toString());
-        Log.d("BMemNo", BMemNo.toString());
+        Log.d("BMemNo", boardNo.toString());
         if (MFlag.equals("1")) {
             btn_board_d.setVisibility(View.VISIBLE);
             Log.d("BUTTON_TEST_ADMIN", MFlag);
@@ -55,7 +55,7 @@ public class BoardRead extends AppCompatActivity {
             btn_board_d.setVisibility(View.VISIBLE);
             btn_board_up.setVisibility(View.VISIBLE);
             Log.d("BUTTON_TEST_MEMNO", MemNo);
-            Log.d("BUTTON_TEST_MEMNO", BMemNo);
+//            Log.d("BUTTON_TEST_MEMNO", BMemNo);
         }else {
             btn_board_d.setVisibility(View.GONE);
             btn_board_up.setVisibility(View.GONE);

@@ -86,9 +86,6 @@ public class FaqRead extends AppCompatActivity {
             @Override
             public void onResponse(Call<FaqDTO> call, Response<FaqDTO> response) {
                 if (response.isSuccessful()) {
-//                    Log.d("RETROFIT_SUC", response.body().getFaqFlag().toString());
-//                    Intent intent = new Intent(getApplicationContext(),WorkFaq.class);
-//                    startActivity(intent);
                     finish();
                 } else {
                     Log.d("RETROFIT_FAIL", response.errorBody().toString());

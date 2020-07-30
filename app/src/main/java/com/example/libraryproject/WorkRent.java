@@ -25,8 +25,6 @@ public class WorkRent extends AppCompatActivity {
     private String memNo;
     private static String CLIENT_ID = "부여받은 Client Id";
     private static String CLIENT_PASSWORD = "부여받은 pwd";
-    //String bookName, bookPrice, bookPubDate, authorName, publisherName;
-   // int permssionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
 
     private final int MY_PERMISSIONS_REQUEST_CAMERA=1001;
 
@@ -35,20 +33,15 @@ public class WorkRent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work_rent);
         new IntentIntegrator(this).initiateScan();
-
         int permssionCheck = ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA);
-
         if (permssionCheck!= PackageManager.PERMISSION_GRANTED) {
-
             Toast.makeText(this,"권한 승인이 필요합니다",Toast.LENGTH_LONG).show();
-
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.CAMERA)) {
             } else {
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.CAMERA},
                         MY_PERMISSIONS_REQUEST_CAMERA);
-
             }
         }
     }
@@ -60,9 +53,7 @@ public class WorkRent extends AppCompatActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
                     Toast.makeText(this,"승인이 허가되어 있습니다.",Toast.LENGTH_LONG).show();
-
                 } else {
                     Toast.makeText(this,"아직 승인받지 않았습니다.",Toast.LENGTH_LONG).show();
                 }
@@ -78,48 +69,14 @@ public class WorkRent extends AppCompatActivity {
          // 결과값 출력
          Toast.makeText(this, "출력 ISBN:" + result.getContents(), Toast.LENGTH_SHORT).show();
          memNo = result.getContents();
-         //레트로핏 구현해야함
+         if(result.getContents()!=null){
              Intent intent = new Intent(getApplicationContext(),Rent.class);
              intent.putExtra("MEM_NO",memNo);
              startActivity(intent);
-
+         }else{
+             Intent intent = new Intent(getApplicationContext(),WorkMain.class);
+             startActivity(intent);
+         }
      }
 }
 
-
-
-
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_work_rent);
-//        new IntentIntegrator(this).initiateScan();
-//    }
-//
-//
-// protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//     // QR코드/바코드를 스캔한 결과 값을 가져옵니다.
-//     super.onActivityResult(requestCode, resultCode, data);
-//     IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-//     // 결과값 출력
-//     Toast.makeText(this, "출력 ISBN:" + result.getContents(), Toast.LENGTH_SHORT).show();
-//
-// }
-//
-//}
-
-
-/*package com.example.libraryproject;
-
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-public class WorkRent extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_work_rent);
-    }
-}*/

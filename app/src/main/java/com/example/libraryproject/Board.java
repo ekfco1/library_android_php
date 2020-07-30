@@ -72,8 +72,6 @@ public class Board extends AppCompatActivity {
                         // adapter.getItem(0).toString();
                     }
                     Log.d("RETROFIT_SUC", response.body().toString());
-//                    }
-                  //  boardNo = response.body().getBoardNo().toString;
                 } else {
                     Log.d("RETROFIT_FAIL", response.errorBody().toString());
                 }
@@ -103,7 +101,6 @@ public class Board extends AppCompatActivity {
                                 Rintent.putExtra("MEM_NO",response.body().getMemNo());
                                 Log.d("TEST_MEMNO", response.body().getMemNo().toString());
                                 startActivityForResult(Rintent, 0);
-                                //               Log.d("FAQ_NO", response.body().getFaqNo().toString());
 //                    }
                             } else {
                                 Log.d("RETROFIT_FAIL", response.errorBody().toString());

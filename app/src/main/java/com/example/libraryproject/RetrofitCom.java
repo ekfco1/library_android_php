@@ -9,7 +9,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitCom {
-     final static String API_URL = "http://ec2-52-55-224-222.compute-1.amazonaws.com/";
+//     final static String API_URL = "http:///";
+    private static final String FCM_SEND_ENDPOINT = "" ;
 
     Gson gson = new GsonBuilder()
                 .setLenient()
@@ -25,7 +26,7 @@ public class RetrofitCom {
 
 
     public Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://ec2-52-55-224-222.compute-1.amazonaws.com/")
+             .baseUrl("http://52.4.115.234/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(okHttpClient)
             .build();

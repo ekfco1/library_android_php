@@ -64,6 +64,7 @@ public class BoardWrite extends AppCompatActivity {
                     if (response.isSuccessful() ) {
                         Log.d("RETROFIT_SUC", response.body().toString());
                         Intent intent = new Intent(getApplicationContext(),BoardRead.class);
+                        intent.putExtra("MEM_NO",MemNo);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     }

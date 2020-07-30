@@ -15,19 +15,16 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    CustomLibrary cl = new CustomLibrary();
 
     EditText et_mem_id;
     EditText et_mem_pw;
-
+//    private String token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         et_mem_id = (EditText) findViewById(R.id.et_mem_id) ;
         et_mem_pw = (EditText)findViewById(R.id.et_mem_pw);
-
-
     };
 
 
@@ -60,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
                             editor.putString("MemNo", String.valueOf(response.body().getMemNo()));
                             editor.putString("MemFlag", String.valueOf(response.body().getMemFlag()));
                             editor.apply();
+                            Log.d("LOGIN_RESULT", String.valueOf(response.body().getMemNo()));
                             // 로그인 성공할 경우
                             if (response.body().getMemFlag().equals("1")) {
                                 // 관리자
                                 Intent Rintent = new Intent(getApplicationContext(), WorkMain.class);
                                 startActivity(Rintent);
                             } else {
-                                // 회원
                                 Intent Rintent = new Intent(getApplicationContext(), MemMain.class);
                                 startActivity(Rintent);
                             }
@@ -103,10 +100,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Fintent);
 
     }
-  /*  String result = task.getResult();
-
-        System.out.println(result);
-}*/
-
 
 }

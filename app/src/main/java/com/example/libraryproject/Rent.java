@@ -19,9 +19,15 @@ public class Rent extends AppCompatActivity {
         memNo = intent.getStringExtra("MEM_NO");
     }
     public void btn_check(View v){
-        Intent intent = new Intent(getApplicationContext(),RentBook.class);
-        intent.putExtra("MEM_NO",memNo);
-        startActivity(intent);
+        if(memNo!= null){
+            Intent intent = new Intent(getApplicationContext(),RentBook.class);
+            intent.putExtra("MEM_NO",memNo);
+            startActivity(intent);
+        }else{
+            Intent intent = new Intent(getApplicationContext(),WorkMain.class);
+            startActivity(intent);
+        }
+
 
     }
 }

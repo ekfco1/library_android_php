@@ -40,7 +40,6 @@ public class WorkMain extends AppCompatActivity {
         });
     }
     public void btnRentReturn(View v){
-        //TODO 대출 반납
         Intent Lintent = new Intent(getApplicationContext(),WorkRentReturn.class);
         Lintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(Lintent);

@@ -33,6 +33,7 @@ public class FaqWrite extends AppCompatActivity {
         et_faq_title = (EditText) findViewById(R.id.et_faq_title);
         sharedPreferences = this.getSharedPreferences(USER_SESSION_KEY, this.MODE_PRIVATE);
         MemNo = sharedPreferences.getString("MemNo", "");
+        Log.d("faq_mem_no", MemNo);
     }
 
     public void btn_faq_c(View v){

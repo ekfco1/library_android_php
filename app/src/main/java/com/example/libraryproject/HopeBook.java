@@ -41,13 +41,8 @@ public class HopeBook extends AppCompatActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
-//                // get item
                 HBookDTO item = (HBookDTO) parent.getItemAtPosition(position);
                 Log.d("LIST_TEST", item.getHbookPublish().toString());
-//
-//                String hbookTitle = item.getHbookTitle();
-//                String hbookAuthor = item.getHbookAuthor();
-//                String hbookPublish = item.getHbookPublish();
             }
         });
 
@@ -110,9 +105,6 @@ public class HopeBook extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-//        if (convertView == null) {
-//            convertView = LayoutInflater.from(mContext).inflate(R.layout.activity_hope_book, parent, false);
-//        }
             final Context context = parent.getContext();
 
             // "listview_item" Layout을 inflate하여 convertView 참조 획득.

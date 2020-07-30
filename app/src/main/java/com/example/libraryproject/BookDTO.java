@@ -18,7 +18,7 @@ public class BookDTO {
     @SerializedName("BDate")
     private String BDate;
     @SerializedName("BFlag")
-    private  String bookFlag; //대출가능 대출중 예약?
+    private  String bookFlag; //대출가능 대출중
     @SerializedName("MemNo")
     private String memNo;
     @SerializedName("BRent")

@@ -52,7 +52,7 @@ public class Find extends AppCompatActivity {
                            if(mToastStr != null){
                                 Toast.makeText(getApplicationContext(),mToastStr,Toast.LENGTH_LONG).show();
                                 Intent Lintent = new Intent(getApplicationContext(),MainActivity.class);
-                               Lintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                Lintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(Lintent);
                            }
                     }else if (response.body().getRESULT_CODE().equals("Fail")) {
@@ -60,7 +60,7 @@ public class Find extends AppCompatActivity {
                         Log.d("RETROFIT_SUC", response.body().getRESULT_CODE());
                     } else {
                             Log.d("RETROFIT_SUC", response.body().getRESULT_CODE());
-                        Toast.makeText(getApplicationContext(),"처리할 수 없는 오류입니다.",Toast.LENGTH_SHORT).show();//이거 떠요 이거 떠오오오~? 귀여오오오오오오
+                        Toast.makeText(getApplicationContext(),"처리할 수 없는 오류입니다.",Toast.LENGTH_SHORT).show();
                     }
                         MemDTO result = response.body();
                     } else {
@@ -76,6 +76,4 @@ public class Find extends AppCompatActivity {
                 }
             });
     }
-//    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-//    startActivity(intent);
 }

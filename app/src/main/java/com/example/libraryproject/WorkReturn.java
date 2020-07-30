@@ -63,7 +63,6 @@ public class WorkReturn extends AppCompatActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
                     Toast.makeText(this,"반납되었습니다.",Toast.LENGTH_LONG).show();
 
                 } else {
@@ -80,6 +79,10 @@ public class WorkReturn extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         Toast.makeText(this, "출력 ISBN:" + result.getContents(), Toast.LENGTH_SHORT).show();
         bNo = result.getContents();
+        if(bNo == null){
+                Intent intent = new Intent(getApplicationContext(),WorkMain.class);
+                startActivity(intent);
+        }
         RetrofitService iservice = new RetrofitCom().retrofit.create(RetrofitService.class);
         Call<BookDTO> call = iservice.returnBook(bNo);
         Log.d("URL_TEST", call.request().url().toString());

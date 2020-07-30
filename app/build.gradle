@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -28,10 +28,12 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.navigation:navigation-fragment:2.0.0'
     implementation 'androidx.navigation:navigation-ui:2.0.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
+    //firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
     //레트로핏
     implementation('com.squareup.retrofit2:retrofit:2.6.4') {
         exclude module: 'okhttp'
@@ -45,6 +47,7 @@ dependencies {
 // logging-interceptor는 반환된 모든 응답에 대해 로그 문자열을 생성합니다.
     //바코드
     implementation 'com.google.zxing:core:3.2.0' //바코드
-    implementation 'com.journeyapps:zxing-android-embedded:3.0.0@aar' //바코드
+    implementation 'com.journeyapps:zxing-android-embedded:3.0.0@aar'
+    implementation 'com.google.firebase:firebase-messaging:20.2.3'//바코드
 
 }

@@ -16,7 +16,20 @@ public class MemDTO {
     private Integer memPhone;
     @SerializedName("MemberFlag")
     private String memFlag;
-    //string으로 바꿨오 우구우구 잘했오오오 우리 아가아 다시 해보까오?
+    @SerializedName("Token")
+    private String Token;
+
+    public String getToken() {
+        return Token;
+    }
+
+    public void setToken(String token) {
+        Token = token;
+    }
+
+    public void setMemPhone(Integer memPhone) {
+        this.memPhone = memPhone;
+    }
 
     public String getRESULT_CODE() {
         return RESULT_CODE;
