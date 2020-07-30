@@ -47,7 +47,7 @@ ini_set('error_reporting',E_ALL);
    
         } catch(PDOException $ex) {
             // echo $ex -> getMessage()."<br>";
-            $response["Result"] = "Fail"; // 나중에 왜 Fail 인지도 세분화해서 처리하면 개발하기 더 좋아요
+            $response["Result"] = "Fail"; 
             echo json_encode($response);
         }
         $Conn = null;
