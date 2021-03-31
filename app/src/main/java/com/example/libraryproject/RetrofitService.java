@@ -14,7 +14,7 @@ interface RetrofitService {
                                  @Query("UserPhone") Integer UserPhone, @Query("UserFlag") String UserFlag, @Query("Token") String Token);// register = api uri 부분(php이름)
 
 //   ??     @GET("login1.php") //로그인
-        @GET("tlogin.php")
+        @GET("login.php")
         Call<MemDTO> getlogin(@Query("UserID") String UserID, @Query("UserPW") String UserPW);
 
         @GET("retrofit_test.php") //예시
@@ -23,13 +23,13 @@ interface RetrofitService {
         @POST("inserth.php") //희망도서 등록
         Call<HBookDTO> inserthbook(@Query("HTitle") String HTitle, @Query("HAuthor") String HAuthor, @Query("HPublish") String HPublish);
 
-        @GET("find1.php") //ID/PW 찾기
+        @GET("find.php") //ID/PW 찾기
         Call<MemDTO> find(@Query("UserName")String UserName, @Query("UserPhone") Integer UserPhone);
 
-        @POST("insertbook.php")// 도서 등록
+        @POST("insertb.php")// 도서 등록
         Call<BookDTO> insertbook(@Query("BTitle") String BTitle, @Query("BAuthor") String BAuthor, @Query("BPublish") String BPublish,
                                  @Query("BDate") String BDate, @Query("BFlag") String BFlag, @Query("MemNo") String MemNo);
-        @GET("htest1.php")// 희망 도서 확인
+        @GET("gethbook.php")// 희망 도서 확인
         Call<List<HBookDTO>> gethbook();
 
         @GET("getfaq.php")//faq 첫화면
@@ -41,7 +41,7 @@ interface RetrofitService {
         @GET("readfaq.php")//FAQ read
         Call<FaqDTO> readFaq(@Query("FNo") String FNo);
 
-        @POST("updatefaq1.php")//FAQ 수정
+        @POST("faqupdate.php")//FAQ 수정
         Call<FaqDTO> updateFaq(@Query("FNo") String FNo, @Query("FTitle") String Ftitle,@Query("FContent") String FContent);
 
         @GET("getboard.php")//도서후기 첫화면

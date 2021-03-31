@@ -9,7 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitCom {
-//     final static String API_URL = "http:///";
+
     private static final String FCM_SEND_ENDPOINT = "" ;
 
     Gson gson = new GsonBuilder()
@@ -26,7 +26,7 @@ public class RetrofitCom {
 
 
     public Retrofit retrofit = new Retrofit.Builder()
-             .baseUrl("http://52.4.115.234/")
+             .baseUrl("url경로")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(okHttpClient)
             .build();

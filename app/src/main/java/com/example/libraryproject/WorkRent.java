@@ -15,11 +15,6 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 
-/**
- * Created by 15U560 on 2016-10-25.
- */
-
-
 public class WorkRent extends AppCompatActivity {
 
     private String memNo;

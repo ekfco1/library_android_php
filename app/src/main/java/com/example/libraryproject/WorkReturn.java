@@ -19,12 +19,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-/**
- * Created by 15U560 on 2016-10-25.
- */
-
-
 public class WorkReturn extends AppCompatActivity {
 
     private static String CLIENT_ID = "부여받은 Client Id";

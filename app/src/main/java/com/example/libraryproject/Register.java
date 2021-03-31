@@ -80,7 +80,7 @@ public class Register extends AppCompatActivity {
 
         if(et_mem_id.getText().length() == 0){
             et_mem_id.setError("아이디를 입력하세요");
-            return; //
+            return;
         }
         if(et_mem_pw.getText().toString().equals("")){
             et_mem_pw.setError("비밀번호를 입력하세요");
@@ -123,13 +123,11 @@ public class Register extends AppCompatActivity {
                     } else {
                         Log.d("RETROFIT_FAIL", response.errorBody().toString());
                     }
-
                 }
 
                 @Override
                 public void onFailure(Call<MemDTO> call, Throwable t) {
                     Log.d("RETROFIT_TEST", t.getLocalizedMessage());
-
                 }
             });
     }
